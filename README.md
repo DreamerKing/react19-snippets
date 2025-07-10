@@ -2,11 +2,9 @@
 
 The essential collection of React Snippets and commands.
 
-![snippets in action](images/snippets-in-action.gif)
-
 ## Features
 
-Only what you need and nothing more. **No Redux. No React Native.**
+Only what you need and nothing more. **No Class Components. No PropTypes. No Redux. No React Native.**
 
 Simply, simple React snippets.
 
@@ -19,35 +17,14 @@ that work the way that you would expect, not just a copy of the documentation.
 | Snippet | Renders                                       |
 | ------- | --------------------------------------------- |
 | `imr`   | Import React                                  |
-| `imrc`  | Import React / Component                      |
-| `imrd`  | Import ReactDOM                               |
-| `imrs`  | Import React / useState                       |
-| `imrse` | Import React / useState useEffect             |
-| `impt`  | Import PropTypes                              |
-| `impc`  | Import React / PureComponent                  |
-| `cc`    | Class Component                               |
-| `ccc`   | Class Component With Constructor              |
-| `cpc`   | Class Pure Component                          |
+| `ims`   | Import  useState                       |
+| `imse`  | Import  useState useEffect             |
 | `ffc`   | Function Component                            |
 | `sfc`   | Stateless Function Component (Arrow function) |
-| `cdm`   | componentDidMount                             |
 | `uef`   | useEffect Hook                                |
 | `ucb`   | useCallback Hook                              |
-| `cwm`   | componentWillMount                            |
-| `cwrp`  | componentWillReceiveProps                     |
-| `gds`   | getDerivedStateFromProps                      |
-| `scu`   | shouldComponentUpdate                         |
-| `cwu`   | componentWillUpdate                           |
-| `cdu`   | componentDidUpdate                            |
-| `cwun`  | componentWillUnmount                          |
-| `cdc`   | componentDidCatch                             |
-| `gsbu`  | getSnapshotBeforeUpdate                       |
-| `ss`    | setState                                      |
 | `ssf`   | Functional setState                           |
 | `usf`   | Declare a new state variable using State Hook |
-| `ren`   | render                                        |
-| `rprop` | Render Prop                                   |
-| `hoc`   | Higher Order Component                        |
 | `cp`    | Context Provider                              |
 | `cpf`   | Class Property Function                       |
 
@@ -55,94 +32,25 @@ that work the way that you would expect, not just a copy of the documentation.
 
 ### imr - Import React
 
-```javascript
-import * as React from "react";
+```js
+import  React from "react";
 ```
 
-### imrc - Import React, Component
+### ims - Import  useState
 
-```javascript
-import * as React from "react";
-import { Component } from "react";
-```
-
-### imrd - Import ReactDOM
-
-```javascript
-import ReactDOM from "react-dom";
-```
-
-### imrs - Import React, useState
-
-```javascript
-import * as React from "react";
+```js
 import { useState } from "react";
 ```
 
-### imrse - Import React, useState, useEffect
+### imse -  useState, useEffect
 
-```javascript
-import * as React from "react";
+```js
 import { useState, useEffect } from "react";
-```
-
-### impt - Import PropTypes
-
-```javascript
-import PropTypes from "prop-types";
-```
-
-### impc - Import PureComponent
-
-```javascript
-import * as React from "react";
-import { PureComponent } from "react";
-```
-
-### cc - Class Component
-
-```javascript
-class | extends React.Component {
-  render() {
-    return <div>|</div>
-  }
-}
-
-export default |;
-```
-
-### ccc - Class Component With Constructor
-
-```javascript
-class | extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { | };
-  }
-  render() {
-    return ( | );
-  }
-}
-
-export default |;
-```
-
-### cpc - Class Pure Component
-
-```javascript
-class | extends PureComponent {
-  state = { | },
-  render() {
-    return ( | );
-  }
-}
-
-export default |;
 ```
 
 ### ffc - Function Component
 
-```javascript
+```js
 function (|) {
     return ( | );
 }
@@ -152,7 +60,7 @@ export default |;
 
 ### sfc - Stateless Function Component (Arrow function)
 
-```javascript
+```js
 const | = props => {
   return ( | );
 };
@@ -160,17 +68,9 @@ const | = props => {
 export default |;
 ```
 
-### cdm - componentDidMount
-
-```javascript
-componentDidMount() {
-  |
-}
-```
-
 ### uef - useEffect Hook
 
-```javascript
+```js
 useEffect(() => {
   |
 }, []);
@@ -178,96 +78,15 @@ useEffect(() => {
 
 ### ucb - useCallback Hook
 
-```javascript
+```js
 useCallback((val) => {
   |
 }, []);
 ```
 
-### cwm - componentWillMount
-
-```javascript
-//WARNING! To be deprecated in React v17. Use componentDidMount instead.
-componentWillMount() {
-  |
-}
-```
-
-### cwrp - componentWillReceiveProps
-
-```javascript
-//WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
-componentWillReceiveProps(nextProps) {
-  |
-}
-```
-
-### gds - getDerivedStateFromProps
-
-```javascript
-static getDerivedStateFromProps(nextProps, prevState) {
-  |
-}
-```
-
-### scu - shouldComponentUpdate
-
-```javascript
-shouldComponentUpdate(nextProps, nextState) {
-  |
-}
-```
-
-### cwu - componentWillUpdate
-
-```javascript
-//WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
-componentWillUpdate(nextProps, nextState) {
-  |
-}
-```
-
-### cdu - componentDidUpdate
-
-```javascript
-componentDidUpdate(prevProps, prevState) {
-  |
-}
-```
-
-### cwun - componentWillUnmount
-
-```javascript
-componentWillUnmount() {
-  |
-}
-```
-
-### cdc - componentDidCatch
-
-```javascript
-componentDidCatch(error, info) {
-  |
-}
-```
-
-### gsbu - getSnapshotBeforeUpdate
-
-```javascript
-getSnapshotBeforeUpdate(prevProps, prevState) {
-  |
-}
-```
-
-### ss - setState
-
-```javascript
-this.setState({ | : | });
-```
-
 ### ssf - Functional setState
 
-```javascript
+```js
 this.setState(prevState => {
   return { | : prevState.| }
 });
@@ -275,59 +94,8 @@ this.setState(prevState => {
 
 ### usf - Declare a new state variable using State Hook
 
-```javascript
+```js
 const [|, set|] = useState();
-```
-
-_Hit Tab to apply CamelCase to function. e.g. [count, setCount]_
-
-### ren - render
-
-```javascript
-render() {
-  return (
-    |
-  );
-}
-```
-
-### rprop - Render Prop
-
-```javascript
-class | extends Component {
-  state = { | },
-  render() {
-    return this.props.render({
-      |: this.state.|
-    });
-  }
-}
-
-export default |;
-```
-
-### hoc - Higher Order Component
-
-```javascript
-function | (|) {
-  return class extends Component {
-    constructor(props) {
-      super(props);
-    }
-
-    render() {
-      return < | {...this.props} />;
-    }
-  };
-}
-```
-
-### cpf - Class Property Function
-
-```javascript
-  | = (e) => {
-    |
-  }
 ```
 
 ## Commands
